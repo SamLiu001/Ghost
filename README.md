@@ -6,7 +6,7 @@
 
 ### install.sh
 ```shell
-export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v4.42.5;
+export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v4.43.5;
 
 rm -rf ./._temp_ghost.zip && rm -rf ./myghost.zip && rm -rf ./.myghost && curl -L -o ._temp_ghost.zip $update_zip_url && unzip ._temp_ghost.zip -d .myghost && cd .myghost && cd $(ls -d */|head -n 1) && zip -r ../../myghost.zip . && cd ../../ && rm -rf ./._temp_ghost.zip && rm -rf ./.myghost && ghost install --zip myghost.zip && rm -rf ./myghost.zip
 ```
