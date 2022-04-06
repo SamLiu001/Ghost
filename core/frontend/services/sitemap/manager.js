@@ -21,11 +21,11 @@ class SiteMapManager {
 
         events.on('router.created', (router) => {
             if (router.name === 'StaticRoutesRouter') {
-                this.pages.addUrl(router.getRoute({absolute: true}), {id: router.identifier, staticRoute: true});
+                this.pages.addUrl(router.getRoute({ absolute: true }), { id: router.identifier, staticRoute: true });
             }
 
             if (router.name === 'CollectionRouter') {
-                this.pages.addUrl(router.getRoute({absolute: true}), {id: router.identifier, staticRoute: false});
+                this.pages.addUrl(router.getRoute({ absolute: true }), { id: router.identifier, staticRoute: false });
             }
         });
 
@@ -50,8 +50,8 @@ class SiteMapManager {
             types: {
                 pages: this.pages,
                 posts: this.posts,
-                authors: this.authors,
-                tags: this.tags
+                // authors: this.authors,
+                // tags: this.tags
             },
             maxPerPage: options.maxPerPage
         });
