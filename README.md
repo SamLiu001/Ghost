@@ -2,18 +2,18 @@
 
 ## 使用我们自己修改过的 ghost 包来安装或更新
 ## 为防止 ghost update 命令更新了官方的包，我们的包版本号始终比官方高10，例如官方是v4.42.1，则我们的版本是 v14.42.1
-## 我们自己包的发布版本：https://api.github.com/repos/SamLiu001/Ghost/releases
+## 我们自己包的发行版本：https://api.github.com/repos/SamLiu001/Ghost/releases
 
 ### install.sh
 ```shell
-export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v4.43.1;
+export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v14.42.1;
 
 rm -rf ./._temp_ghost.zip && rm -rf ./myghost.zip && rm -rf ./.myghost && curl -L -o ._temp_ghost.zip $update_zip_url && unzip ._temp_ghost.zip -d .myghost && cd .myghost && cd $(ls -d */|head -n 1) && zip -r ../../myghost.zip . && cd ../../ && rm -rf ./._temp_ghost.zip && rm -rf ./.myghost && ghost install --zip myghost.zip && rm -rf ./myghost.zip
 ```
 
 ### update.sh
 ```shell
-export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v4.43.1;
+export update_zip_url=https://api.github.com/repos/SamLiu001/Ghost/zipball/v14.42.1;
 
 rm -rf ./._temp_ghost.zip && rm -rf ./myghost.zip && rm -rf ./.myghost && curl -L -o ._temp_ghost.zip $update_zip_url && unzip ._temp_ghost.zip -d .myghost && cd .myghost && cd $(ls -d */|head -n 1) && zip -r ../../myghost.zip . && cd ../../ && rm -rf ./._temp_ghost.zip && rm -rf ./.myghost && ghost update --zip myghost.zip && rm -rf ./myghost.zip
 ```
